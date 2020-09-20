@@ -13,8 +13,8 @@ Final code will be inside Notebook folder, its is names according to their uses
 FinalCode.ipynb is the Final code to be executed
 
 
-For accessing the dataset, you need to create account with  https://www.smir.ch/BRATS/Start2013. For free access to GPU,   refer to this Google Colab tutorial https://medium.com/deep-learning-turkey/google-colab-free-gpu-tutorial-e113627b9f5d or my previous repo https://github.com/jadevaibhav/Signature-verification-using-deep-learning. I am removing data and model files and uploading the code only. All the images I used here are from the paper only. 
-#### Using the code 🧑‍🔧
+For accessing the dataset, you need to create account with  https://www.smir.ch/BRATS/Start2013. For free access to GPU,   refer to this Google Colab tutorial https://medium.com/deep-learning-turkey/google-colab-free-gpu-tutorial-e113627b9f5d 
+
 You are free to use contents of this repo for academic and non-commercial purposes only.
 
 
