@@ -1,34 +1,43 @@
-# Brain-Tumor-Segmentation-using-Deep-Neural-networks
-Keras implementation of paper by the same name
 
-I have uploaded the code in FinalCode.ipynb. For explanation of paper and the changes I have done, the information is in there with .pptx file and this readme also. For accessing the dataset, you need to create account with https://www.smir.ch/BRATS/Start2013. For free access to GPU, refer to this Google Colab tutorial https://medium.com/deep-learning-turkey/google-colab-free-gpu-tutorial-e113627b9f5d or my previous repo https://github.com/jadevaibhav/Signature-verification-using-deep-learning. I am removing data and model files and uploading the code only. All the images I used here are from the paper only.
+# Brain-Tumor-Segmentation-using-Deep-Neural-Networks
 
-## Using the code
+This project is made for as a proof of concept for augument the treatment of brain tumer, this is done for one of my friend, for her 🙎‍♀️ final year project.
+
+Feel free to ask any questions/doubts 😀 
+
+visit: www.robinrajsb.com
+
+I have implemented this CNN using Keras 👌
+
+Final code will be inside Notebook folder, its is names according to their uses
+FinalCode.ipynb is the Final code to be executed
+
+
+For accessing the dataset, you need to create account with  https://www.smir.ch/BRATS/Start2013. For free access to GPU,   refer to this Google Colab tutorial https://medium.com/deep-learning-turkey/google-colab-free-gpu-tutorial-e113627b9f5d or my previous repo https://github.com/jadevaibhav/Signature-verification-using-deep-learning. I am removing data and model files and uploading the code only. All the images I used here are from the paper only. 
+#### Using the code 🧑‍🔧
 You are free to use contents of this repo for academic and non-commercial purposes only.
 
-## Resources
-https://arxiv.org/pdf/1505.03540.pdf
-(this is sound and complete paper, refer to this and it's references for all questions)
 
-## Modifications
-- ##### Instead of two-way training process as mentioned in paper, I have used weighted-categorical-loss function for which weights are calculated per slice basis.
-- ##### I have used batchnormalization instead of dropout.
-- ##### Batchnorm also smoothens the optimization curve(refer to https://arxiv.org/pdf/1805.11604.pdf).
-- ##### As per the paper, the loss is defined as cumulative loss of categorization of all patches-per-pixel of the given slice. Instead, I am creating a dataset for such slice and training using mini-batch gradient descent(where it should batch gradient descent in accordance of the paper).
 
-## Overview
+### Resources
+https://arxiv.org/pdf/1505.03540.pdf (this is sound and complete paper, refer to this and it's references for all questions)
+
+### Overview 🧑‍💻
 Paper poses the pixel-wise segmentation problem as classification problem. The model takes a patch around the central pixel and labels from the five categories, as defined by the dataset -
-- Necrosis
-- Edema
-- Non-enhancing tumor
-- Enhancing tumor 
-- Everything else
-This way, the model goes over the entire image producing labels pixel-by-pixel.  
 
-## BRATS Dataset 
+Necrosis
+Edema
+Non-enhancing tumor
+Enhancing tumor
+Everything else This way, the model goes over the entire image producing labels pixel-by-pixel.
+
+
+### BRATS Dataset 🧳
+
+
 I have used BRATS 2013 training dataset for the analysis of the proposed methodology. It consists of real patient images as well as synthetic images created by SMIR. Each of these folders are then subdivided into High Grade and Low Grade images. For each patient, four modalities(T1, T1-C, T2 and FLAIR) are provided. The fifth image has ground truth labels for each pixel. The dimensions of image is different in LG and HG. For HG, the dimensions are (176,261,160) and for LG are (176,196,216).
 
-![](Capture2.PNG)
+
 
 ## Dataset pre-processing 
 As per the requirement of the algorithm, slices with the four modalities as channels are created. For taking slices of 3D modality image, I have used 2nd dimension. At time of training/ testing, we need to generate patches centered on pixel which we would classifying. We are ignoring the border pixels of images and taking only inside pixels. Generating a dataset per slice. I am filtering out blank slices and patches. Also, slices with all non-tumor pixels are ignored.
@@ -74,7 +83,4 @@ Slice Number                 F1-Score (complete)
 112                             0.9297  0.7868
 113                             0.9273  0.79228
 ```
-## Last Few Words
-This paper is really simple, elegant and brillant. It put together various architectural and training ideas to tackle the brain tumor segementation. I am really thankful to Dr. Aditya abhyankar, Dean, DoT, Pune University, who helped solve my doubts and encouraged me to try out this paper. Special thanks to Mohammad Havaei, author of the paper, who also guided me and solved my doubts. 
-
-Now to all who were with me till end, Thank you for your efforts! If you liked my repo and the work I have done, feel free to star this repo and follow me. I will make sure to bring out awesome deep learning projects like this in the future. Until the next time, サヨナラ!
+Thanks 🙏 to https://github.com/jadevaibhav/Brain-Tumor-Segmentation-using-Deep-Neural-networks
